@@ -5,7 +5,7 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: "Premium Okra Powder",
+      name: "Premium Okro Powder",
       description: "Finely ground okra powder for smooth soups and stews",
       price: 30,
       image:Images.Image5,
@@ -13,15 +13,15 @@ const Products = () => {
     },
     {
       id: 2,
-      name: "Dried Okra Chunks",
-      description: "Premium dried okra chunks for traditional cooking",
+      name: "Dried Okro Chunks",
+      description: "Premium dried okro chunks for traditional cooking",
       price: 20,
       image:Images.Image5,
       paystackLink: "https://paystack.com/pay/okra-chunks",
     },
     {
       id: 3,
-      name: "Bulk Okra Package",
+      name: "Bulk Okro Package",
       description: "Perfect for restaurants and food service businesses",
       price: 50,
       image: Images.Image5,
