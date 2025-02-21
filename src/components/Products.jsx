@@ -6,7 +6,7 @@ const Products = () => {
     {
       id: 1,
       name: "Premium Okro Powder",
-      description: "Finely ground okra powder for smooth soups and stews",
+      description: "Finely ground okro powder for smooth soups and stews",
       price: 30,
       image:Images.Image5,
       paystackLink: "https://paystack.com/pay/okra-powder",

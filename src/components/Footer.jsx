@@ -17,7 +17,7 @@ const Footer = () => {
               <span className="ml-2 text-xl font-bold">OkroPro</span>
             </div>
             <p className="text-gray-400">
-              Revolutionizing okra preservation through innovative processing
+              Revolutionizing okro preservation through innovative processing
               technology.
             </p>
             <div className="flex space-x-4">
