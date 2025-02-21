@@ -31,10 +31,16 @@ const Navbar = () => {
               Products
             </a>
             <a
+              href="#process"
+              className="text-gray-600 hover:text-green-600 transition"
+            >
+              Process
+            </a>
+            <a
               href="#innovator"
               className="text-gray-600 hover:text-green-600 transition"
             >
-              Our Team
+              About
             </a>
             <a
               href="#contact"
@@ -72,7 +78,7 @@ const Navbar = () => {
               href="#innovator"
               className="block px-3 py-2 text-gray-600 hover:text-green-600"
             >
-              Our Team
+              About
             </a>
             <a
               href="#contact"
