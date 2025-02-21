@@ -1,3 +1,5 @@
+import Images from "../constant/images";
+
 const Process = () => {
   const steps = [
     {
@@ -5,22 +7,20 @@ const Process = () => {
       title: "Selection",
       description:
         "Carefully selecting fresh, high-quality okra from trusted farmers",
-      image: "https://images.unsplash.com/photo-1595855759920-86582396756c",
+      image: Images.Image1,
     },
     {
       number: "02",
       title: "Processing",
       description:
         "Converting fresh okra into powder and chunks using our proprietary technology",
-      image:
-        "https://images.pexels.com/photos/8105063/pexels-photo-8105063.jpeg",
+      image:Images.Image4,
     },
     {
       number: "03",
       title: "Quality Control",
       description: "Rigorous testing to ensure consistent quality and safety",
-      image:
-        "https://images.pexels.com/photos/8105037/pexels-photo-8105037.jpeg",
+      image:Images.Image3,
     },
   ];
 
