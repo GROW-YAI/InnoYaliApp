@@ -31,7 +31,7 @@ const Contact = () => {
                   <input
                     type="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                    placeholder="your@email.com"
+                    placeholder="your email"
                   />
                 </div>
 
@@ -63,7 +63,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+233 55-159-1730 </p>
                   </div>
                 </div>
 
@@ -71,7 +71,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <p>contact@okropro.com</p>
+                    <p>popfoodsghana@gmail.com</p>
                   </div>
                 </div>
 
@@ -82,7 +82,7 @@ const Contact = () => {
                     <p>
                       123 Processing Plant Street
                       <br />
-                      Food Valley, FV 12345
+                      Agona Kwanyako
                     </p>
                   </div>
                 </div>

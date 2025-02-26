@@ -1,3 +1,5 @@
+import Images from "../constant/images";
+
 const Innovator = () => {
   return (
     <section id="innovator" className="py-20 bg-green-50">
@@ -12,17 +14,17 @@ const Innovator = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e"
-              alt="Team Leader"
+              src={Images.InnnovatorImage}
+              alt="About Innovator: prince Adjei Otsiwah"
               className="rounded-lg shadow-lg w-full"
             />
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Sarah Johnson</h3>
+            <h3 className="text-2xl font-bold">Prince Adjei Otsiwah</h3>
             <p className="text-gray-600">
-              With over 15 years of experience in food technology, Sarah has
-              revolutionized traditional okra preservation methods. Her
+              With over 15 years of experience in food technology, Prince has
+              revolutionized traditional okra preservation methods. His
               innovative approach combines modern technology with sustainable
               practices to create high-quality, long-lasting okra products.
             </p>

@@ -14,7 +14,9 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               <Leaf className="h-8 w-8 text-green-500" />
-              <span className="ml-2 text-xl font-bold">OkroPro</span>
+              <span className="ml-2 text-xl font-bold">
+                Pop Food Ghana Limited
+              </span>
             </div>
             <p className="text-gray-400">
               Revolutionizing okro preservation through innovative processing
@@ -68,7 +70,7 @@ const Footer = () => {
                   href="#innovator"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  Our Team
+                  The Innovator
                 </a>
               </li>
             </ul>
@@ -79,7 +81,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href=" https://paystack.com/buy/pop-okra-powder-zdnyve"
                   className="text-gray-400 hover:text-white transition"
                 >
                   Okra Powder
@@ -87,7 +89,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://paystack.com/buy/pop-okra-chunks-wsvyvm"
                   className="text-gray-400 hover:text-white transition"
                 >
                   Dried Chunks
@@ -95,20 +97,13 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://paystack.com/buy/pop-okra-chunks-wsvyvm"
                   className="text-gray-400 hover:text-white transition"
                 >
                   Bulk Orders
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition"
-                >
-                  Custom Solutions
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -132,29 +127,11 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} OkroPro. All rights reserved.
+            <p className="text-gray-400 text-center text-md">
+              © {new Date().getFullYear()} Pop Food Ghana Limited. All rights
+              reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition"
-              >
-                Cookie Policy
-              </a>
-            </div>
+            {/*  */}
           </div>
         </div>
       </div>
