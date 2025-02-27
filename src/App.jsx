@@ -10,7 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-Montserrat">
       <Navbar />
       <HeroSlider />
       <Features />

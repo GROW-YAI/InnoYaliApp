@@ -97,7 +97,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen font-open-sans w-full overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
