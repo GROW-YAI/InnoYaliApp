@@ -4,6 +4,7 @@ import Image3 from "../assets/images/imag5.jpeg"
 import Image4 from "../assets/images/Step4.jpeg"
 import Image5 from "../assets/images/30350.jpg"
 import Image6 from "../assets/images/fullOkro.webp"
+import Image7 from "../assets/images/SelectionImg.webp"
 import dryImage250 from "../assets/images/250Dry.webp"
 import dryImage500 from "../assets/images/500mgDry.webp"
 import dryImage1kg from "../assets/images/1KgDry.webp"
@@ -20,6 +21,7 @@ export const Images={
     Image4,
     Image5,
     Image6,
+    Image7,
     dryImage250,
     dryImage500,
     dryImage1kg,
