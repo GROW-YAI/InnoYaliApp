@@ -6,7 +6,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid md:grid-cols-2">
-            <div className="p-8 md:p-12">
+            <div className="p-8 md:p-12" data-aos="fade-right">
               <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
               <p className="text-gray-600 mb-8">
                 Have questions about our products? We're here to help.
@@ -55,7 +55,10 @@ const Contact = () => {
               </form>
             </div>
 
-            <div className="bg-green-600 p-8 md:p-12 text-white">
+            <div
+              className="bg-green-600 p-8 md:p-12 text-white"
+              data-aos="fade-left"
+            >
               <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
 
               <div className="space-y-6">

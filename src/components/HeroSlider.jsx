@@ -4,36 +4,37 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Images from "../constant/images";
+
 const HeroSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
     {
-      image:Images.Image1,
+      image: Images.Image1,
       title: "Fresh Okro Selection",
       description:
         "We carefully select the finest, freshest okro from local farmers, ensuring premium quality from the start.",
     },
     {
-      image:Images.Image2,
+      image: Images.Image2,
       title: "Cleaning & Preparation",
       description:
         "Each batch undergoes thorough cleaning and preparation, meeting the highest food safety standards.",
     },
     {
-      image:Images.Image3,
+      image: Images.Image3,
       title: "Processing & Drying",
       description:
         "Using our advanced technology, the okra is processed and dried to preserve its nutritional value.",
     },
     {
-      image:Images.Image4,
+      image: Images.Image4,
       title: "Powder Production",
       description:
         "The dried okra is carefully ground into fine powder, perfect for various culinary applications.",
     },
     {
-      image:Images.Image5,
+      image: Images.Image6,
       title: "Quality Packaging",
       description:
         "Final products are packaged in moisture-proof containers to ensure long-lasting freshness.",
@@ -62,14 +63,17 @@ const HeroSlider = () => {
     return Math.abs(offset) * velocity;
   };
 
-  const paginate = useCallback((newDirection) => {
-    setCurrentIndex((prevIndex) => {
-      const nextIndex = prevIndex + newDirection;
-      if (nextIndex < 0) return slides.length - 1;
-      if (nextIndex >= slides.length) return 0;
-      return nextIndex;
-    });
-  }, []);
+  const paginate = useCallback(
+    (newDirection) => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex + newDirection;
+        if (nextIndex < 0) return slides.length - 1;
+        if (nextIndex >= slides.length) return 0;
+        return nextIndex;
+      });
+    },
+    [slides.length]
+  );
 
   // Auto-advance slides
   useEffect(() => {
@@ -127,12 +131,16 @@ const HeroSlider = () => {
               backgroundImage: `url(${slides[currentIndex].image})`,
             }}
           >
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/70" />
           </div>
 
           {/* Content */}
           <div className="relative h-full flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl mx-auto px-4">
+            <div
+              className="text-center text-white max-w-4xl mx-auto px-4"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            >
               <motion.h2
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -169,7 +177,7 @@ const HeroSlider = () => {
       </button>
 
       {/* Dot Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 bg-black/20 px-6 py-3 rounded-full backdrop-blur-sm z-10">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -179,8 +187,8 @@ const HeroSlider = () => {
             }}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "bg-green-500 scale-125" // Changed from white to green-500 for active dot
-                : "bg-white hover:bg-green-200" // Changed hover state to light green
+                ? "bg-green-500 scale-125 ring-2 ring-white/50" // Added ring effect
+                : "bg-white/80 hover:bg-green-200" // Increased opacity
             }`}
           />
         ))}

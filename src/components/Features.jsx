@@ -32,7 +32,7 @@ const Features = () => {
       className="py-20 bg-gradient-to-b from-green-50 to-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <span className="text-green-600 font-semibold text-sm uppercase tracking-wider">
             Why Choose Us
           </span>
@@ -50,6 +50,8 @@ const Features = () => {
             <div
               key={index}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
               {feature.icon}
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
