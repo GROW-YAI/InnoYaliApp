@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, Leaf } from "lucide-react";
+import Images from "../constant/images";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
             className="flex items-center cursor-pointer"
             onClick={scrollToTop}
           >
-            <Leaf className="h-8 w-8 text-green-600" />
+            <img src={Images.Logo} alt="Pop Food Ghana Ltd" className="w-8 h-8" />
             <span className="ml-2 text-xl font-bold text-gray-900">
             Pop Food Ghana Ltd
             </span>

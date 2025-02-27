@@ -6,6 +6,7 @@ import {
   LinkedinIcon as LinkedIn,
 } from "lucide-react";
 import { useState } from "react";
+import Images from "../constant/images";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -23,8 +24,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 py-12">
           <div className="space-y-4">
             <div className="flex items-center">
-              <Leaf className="h-8 w-8 text-green-500" />
-              <span className="ml-2 text-xl font-bold">
+              <img src={Images.Logo} alt="Pop Food Ghana Ltd" className="w-8 h-8" title="Logo" />              <span className="ml-2 text-xl font-bold">
                 Pop Food Ghana Ltd.
               </span>
             </div>
