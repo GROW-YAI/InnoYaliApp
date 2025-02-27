@@ -67,7 +67,9 @@ const Innovator = () => {
           {/* Content Section */}
           <div className="space-y-8" data-aos="fade-left">
             <div>
-              <h3 className="text-3xl font-bold mb-4">Prince Adjei Otsiwah</h3>
+              <h3 className="text-3xl font-bold mb-4" id="innovator-name">
+                Prince Adjei Otsiwah
+              </h3>
               <p className="text-gray-600 leading-relaxed">
                 With over 15 years of experience in food technology, Prince has
                 revolutionized traditional okra preservation methods. His
@@ -100,9 +102,13 @@ const Innovator = () => {
             <a
               href="#contact"
               className="inline-flex items-center group px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              aria-label="Connect with us"
             >
               Connect with Us
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight
+                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              />
             </a>
           </div>
         </div>

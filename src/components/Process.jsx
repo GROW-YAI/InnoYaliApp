@@ -136,7 +136,12 @@ const Process = () => {
                 <div className="flex items-center gap-4">
                   <div className="bg-green-100 p-3 rounded-lg">{step.icon}</div>
                   <div>
-                    <h3 className="text-2xl font-bold">{step.title}</h3>
+                    <h3
+                      className="text-2xl font-bold"
+                      id={`step-${step.number}`}
+                    >
+                      {step.title}
+                    </h3>
                     <div className="h-1 w-20 bg-green-600 mt-2 rounded-full" />
                   </div>
                 </div>
@@ -145,12 +150,16 @@ const Process = () => {
                   {step.description}
                 </p>
 
-                <ul className="space-y-3">
+                <ul
+                  className="space-y-3"
+                  aria-labelledby={`step-${step.number}`}
+                >
                   {step.details.map((detail, idx) => (
                     <li key={idx} className="flex items-center gap-3 group">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                        <Check className="w-4 h-4 text-green-600" />
-                      </span>
+                      <span
+                        className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors"
+                        aria-hidden="true"
+                      />
                       <span className="text-gray-700">{detail}</span>
                     </li>
                   ))}

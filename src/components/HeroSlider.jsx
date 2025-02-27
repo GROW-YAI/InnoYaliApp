@@ -130,6 +130,8 @@ const HeroSlider = () => {
             style={{
               backgroundImage: `url(${slides[currentIndex].image})`,
             }}
+            role="img"
+            aria-label={slides[currentIndex].title}
           >
             <div className="absolute inset-0 bg-black/70" />
           </div>
@@ -166,14 +168,16 @@ const HeroSlider = () => {
       <button
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 p-2 rounded-full text-white transition-all"
         onClick={handlePrevious}
+        aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-6 h-6" aria-hidden="true" />
       </button>
       <button
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 p-2 rounded-full text-white transition-all"
         onClick={handleNext}
+        aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-6 h-6" aria-hidden="true" />
       </button>
 
       {/* Dot Indicators */}

@@ -39,7 +39,10 @@ const ScrollToTop = () => {
           className="fixed bottom-8 right-8 p-3 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 z-50 group"
           aria-label="Scroll to top"
         >
-          <ChevronUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
+          <ChevronUp
+            className="w-6 h-6 group-hover:-translate-y-1 transition-transform"
+            aria-hidden="true"
+          />
         </button>
       )}
     </>

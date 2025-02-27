@@ -87,8 +87,9 @@ const Products = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+                    aria-label={`Buy ${product.name} for GH₵${product.price}`}
                   >
-                    <ShoppingCart className="h-5 w-5 mr-2" />
+                    <ShoppingCart className="h-5 w-5 mr-2" aria-hidden="true" />
                     Buy Now
                   </a>
                 </div>

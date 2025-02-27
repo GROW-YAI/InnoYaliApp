@@ -91,10 +91,18 @@ const Features = () => {
                 {feature.icon}
               </div>
 
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <h3
+                className="text-xl font-semibold mb-2"
+                id={`feature-${index}`}
+              >
+                {feature.title}
+              </h3>
               <p className="text-gray-600 mb-4">{feature.description}</p>
 
-              <div className="border-t pt-4">
+              <div
+                className="border-t pt-4"
+                aria-labelledby={`feature-${index}`}
+              >
                 <div className="text-2xl font-bold text-green-600">
                   {feature.stat}
                 </div>
