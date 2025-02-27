@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="flex items-center">
               <Leaf className="h-8 w-8 text-green-500" />
               <span className="ml-2 text-xl font-bold">
-                Pop Food Ghana Limited
+                Pop Food Ghana Ltd.
               </span>
             </div>
             <p className="text-gray-400">
@@ -103,7 +103,6 @@ const Footer = () => {
                   Bulk Orders
                 </a>
               </li>
-              
             </ul>
           </div>
 
@@ -128,7 +127,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-center text-md">
-              © {new Date().getFullYear()} Pop Food Ghana Limited. All rights
+              © {new Date().getFullYear()} Pop Food Ghana Ltd. All rights
               reserved.
             </p>
             {/*  */}

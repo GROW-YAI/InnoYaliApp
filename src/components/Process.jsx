@@ -94,7 +94,7 @@ const Process = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -103,34 +103,54 @@ const Process = () => {
               }`}
               data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
             >
-              <div className="flex-1">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-green-600/20 to-transparent rounded-2xl" />
-                  <img
-                    src={step.image || "/placeholder.svg"}
-                    alt={step.title}
-                    className="rounded-2xl shadow-lg relative z-10"
-                  />
+              {/* Image Container */}
+              <div className="flex-1 w-full">
+                <div className="relative group">
+                  {/* Background Pattern */}
+                  <div className="absolute -inset-4 bg-green-50 rounded-2xl transform rotate-2 group-hover:rotate-0 transition-transform duration-300" />
+
+                  {/* Image Wrapper */}
+                  <div className="relative">
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-green-600/20 to-transparent rounded-xl" />
+
+                    {/* Main Image */}
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                      <img
+                        src={step.image || "/placeholder.svg"}
+                        alt={step.title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+
+                    {/* Step Number Badge */}
+                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold shadow-lg z-10">
+                      {step.number}
+                    </div>
+                  </div>
                 </div>
               </div>
 
+              {/* Content Container */}
               <div className="flex-1 space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="bg-green-100 p-3 rounded-lg">{step.icon}</div>
                   <div>
-                    <div className="text-green-600 font-semibold">
-                      Step {step.number}
-                    </div>
                     <h3 className="text-2xl font-bold">{step.title}</h3>
+                    <div className="h-1 w-20 bg-green-600 mt-2 rounded-full" />
                   </div>
                 </div>
 
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
 
                 <ul className="space-y-3">
                   {step.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-green-500" />
+                    <li key={idx} className="flex items-center gap-3 group">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                        <Check className="w-4 h-4 text-green-600" />
+                      </span>
                       <span className="text-gray-700">{detail}</span>
                     </li>
                   ))}

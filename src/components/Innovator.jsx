@@ -51,7 +51,7 @@ const Innovator = () => {
               <img
                 src={Images.InnnovatorImage || "/placeholder.svg"}
                 alt="Prince Adjei Otsiwah"
-                className="relative z-10 rounded-2xl shadow-xl w-full object-cover h-[500px]"
+                className="relative z-10 rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
               />
             </div>
             {/* Experience Badge */}
@@ -77,7 +77,7 @@ const Innovator = () => {
             </div>
 
             {/* Achievements Grid */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
