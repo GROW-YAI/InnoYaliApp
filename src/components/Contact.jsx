@@ -1,6 +1,26 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xkgjnypn");
+
+  if (state.succeeded) {
+    return (
+      <section id="contact" className="py-20 bg-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8">
+            <h2 className="text-2xl font-bold text-green-600 text-center">
+              Thank you for your message!
+            </h2>
+            <p className="text-gray-600 text-center mt-4">
+              We'll get back to you soon.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="contact" className="py-20 bg-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,45 +32,79 @@ const Contact = () => {
                 Have questions about our products? We're here to help.
               </p>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Name
                   </label>
                   <input
+                    id="name"
                     type="text"
+                    name="name"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
                     placeholder="Your name"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email
                   </label>
                   <input
+                    id="email"
                     type="email"
+                    name="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                    placeholder="your email"
+                    placeholder="Your email"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message
                   </label>
                   <textarea
+                    id="message"
+                    name="message"
                     rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
                     placeholder="Your message"
+                    required
                   ></textarea>
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+                  disabled={state.submitting}
+                  className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition disabled:opacity-50"
                 >
-                  Send Message
+                  {state.submitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>

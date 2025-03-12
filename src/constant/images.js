@@ -11,7 +11,7 @@ import dryImage1kg from "../assets/images/1KgDry.webp"
 import powderImage250 from '../assets/images/250Powder.webp'
 import powderImage500 from '../assets/images/500mgPowder.webp'
 import powderImage1kg from '../assets/images/1kgPowder.webp'
-import InnnovatorImage from "../assets/images/Pop.jpeg"
+import InnnovatorImage from "../assets/images/Prince Adjei Otsiwah.png"
 
 
 export const Images={

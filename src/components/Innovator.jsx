@@ -51,7 +51,7 @@ const Innovator = () => {
               <img
                 src={Images.InnnovatorImage || "/placeholder.svg"}
                 alt="Prince Adjei Otsiwah"
-                className="relative z-10 rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
+                className="relative z-10 rounded-xl shadow-xl w-full object-cover aspect-auto"
               />
             </div>
             {/* Experience Badge */}
@@ -59,7 +59,7 @@ const Innovator = () => {
               className="absolute -right-6 top-1/4 bg-white shadow-lg rounded-lg p-4 z-20"
               data-aos="fade-left"
             >
-              <p className="text-3xl font-bold text-green-600">15+</p>
+              <p className="text-3xl font-bold text-green-600">1+</p>
               <p className="text-sm text-gray-600">Years Experience</p>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Innovator = () => {
                 Prince Adjei Otsiwah
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                With over 15 years of experience in food technology, Prince has
+                With over 1+ years of experience in food technology, Prince has
                 revolutionized traditional okra preservation methods. His
                 innovative approach combines modern technology with sustainable
                 practices to create high-quality, long-lasting okra products.
