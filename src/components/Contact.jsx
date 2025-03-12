@@ -4,17 +4,47 @@ import { useForm, ValidationError } from "@formspree/react";
 const Contact = () => {
   const [state, handleSubmit] = useForm("xkgjnypn");
 
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await handleSubmit(e);
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+  };
+
   if (state.succeeded) {
     return (
       <section id="contact" className="py-20 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8">
-            <h2 className="text-2xl font-bold text-green-600 text-center">
-              Thank you for your message!
-            </h2>
-            <p className="text-gray-600 text-center mt-4">
-              We'll get back to you soon.
-            </p>
+            <div className="text-center">
+              <div className="text-green-600 mb-4">
+                <svg
+                  className="w-16 h-16 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold text-green-600">
+                Message Sent Successfully!
+              </h2>
+              <p className="text-gray-600 mt-4">
+                Thank you for reaching out to Pop Food Ghana Ltd. We&apos;ve
+                received your message and will get back to you shortly.
+              </p>
+              <p className="text-gray-600 mt-2">
+                Please check your email for our confirmation message.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -29,10 +59,21 @@ const Contact = () => {
             <div className="p-8 md:p-12" data-aos="fade-right">
               <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
               <p className="text-gray-600 mb-8">
-                Have questions about our products? We're here to help.
+                Have questions about our products? We&apos;re here to help.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Contact Form Submission - Pop Food Ghana"
+                />
+                <input type="hidden" name="_format" value="plain" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value={window.location.href}
+                />
                 <div>
                   <label
                     htmlFor="name"

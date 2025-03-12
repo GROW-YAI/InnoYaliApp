@@ -1,21 +1,36 @@
 import {
-  Leaf,
   Facebook,
   Twitter,
   Instagram,
   LinkedinIcon as LinkedIn,
 } from "lucide-react";
 import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import Images from "../constant/images";
+import React from "react";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [state, handleSubmit] = useForm("xqapknvd");
 
-  const handleSubscribe = (e) => {
+  // Update the modal state when form submission succeeds
+  React.useEffect(() => {
+    if (state.succeeded) {
+      setIsModalOpen(true);
+    }
+  }, [state.succeeded]);
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setIsModalOpen(true);
-    setEmail("");
+    try {
+      await handleSubmit(e);
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
   };
 
   return (
@@ -24,7 +39,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 py-12">
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src={Images.Logo} alt="Pop Food Ghana Ltd" className="w-8 h-8" title="Logo" />              <span className="ml-2 text-xl font-bold">
+              <img
+                src={Images.Logo}
+                alt="Pop Food Ghana Ltd"
+                className="w-8 h-8"
+                title="Logo"
+              />{" "}
+              <span className="ml-2 text-xl font-bold">
                 Pop Food Ghana Ltd.
               </span>
             </div>
@@ -125,39 +146,85 @@ const Footer = () => {
               Subscribe to get updates on new products and special offers.
             </p>
             <div className="space-y-4">
-              <form onSubmit={handleSubscribe}>
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Newsletter Subscription - Pop Food Ghana"
+                />
+                <input type="hidden" name="_format" value="plain" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value={window.location.href}
+                />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                   required
                 />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                  className="text-red-400 text-sm mt-1"
+                />
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white px-4  mt-2 py-2 rounded-lg hover:bg-green-700 transition"
+                  disabled={state.submitting}
+                  className="w-full bg-green-600 text-white px-4 mt-2 py-2 rounded-lg hover:bg-green-700 transition disabled:opacity-50"
                 >
-                  Subscribe
+                  {state.submitting ? "Subscribing..." : "Subscribe"}
                 </button>
               </form>
+              {state.errors && (
+                <p className="text-red-400 text-sm">
+                  There was an error submitting the form. Please try again.
+                </p>
+              )}
             </div>
           </div>
         </div>
 
         {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white text-black p-6 rounded-lg">
-              <h2 className="text-xl font-bold mb-4">
-                Subscription Successful!
-              </h2>
-              <p>Thank you for subscribing to our newsletter!</p>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
-              >
-                Close
-              </button>
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white text-black p-8 rounded-lg max-w-md w-full mx-4">
+              <div className="text-center">
+                <div className="text-green-600 mb-4">
+                  <svg
+                    className="w-16 h-16 mx-auto"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-bold mb-4 text-green-600">
+                  Successfully Subscribed!
+                </h2>
+                <p className="text-gray-600 mb-4">
+                  Thank you for subscribing to our newsletter! You&apos;ll
+                  receive a confirmation email shortly.
+                </p>
+                <p className="text-gray-600 mb-6">
+                  Stay tuned for updates about our latest products and special
+                  offers!
+                </p>
+                <button
+                  onClick={handleModalClose}
+                  className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         )}
