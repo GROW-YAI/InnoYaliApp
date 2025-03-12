@@ -26,17 +26,23 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-green-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-8 sm:py-20 bg-green-50">
+      <div className="max-w-7xl  mx-auto px-2 sm:px-4 lg:px-6">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="p-8 md:p-12" data-aos="fade-right">
-              <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-              <p className="text-gray-600 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+            {/* Form Section */}
+            <div className="p-4 sm:p-8 md:p-12" data-aos="fade-right">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">
+                Get in Touch
+              </h2>
+              <p className="text-gray-600 mb-6 sm:mb-8">
                 Have questions about our products? We&apos;re here to help.
               </p>
 
-              <form onSubmit={handleFormSubmit} className="space-y-6">
+              <form
+                onSubmit={handleFormSubmit}
+                className="space-y-4 sm:space-y-6"
+              >
                 <input
                   type="hidden"
                   name="_subject"
@@ -48,10 +54,11 @@ const Contact = () => {
                   name="_autoresponse"
                   value="Thank you for contacting Pop Food Ghana! We have received your message and will get back to you soon."
                 />
+
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2"
                   >
                     Name
                   </label>
@@ -59,7 +66,7 @@ const Contact = () => {
                     id="name"
                     type="text"
                     name="name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                    className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent text-base"
                     placeholder="Your name"
                     required
                   />
@@ -67,13 +74,14 @@ const Contact = () => {
                     prefix="Name"
                     field="name"
                     errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2"
                   >
                     Email
                   </label>
@@ -81,7 +89,7 @@ const Contact = () => {
                     id="email"
                     type="email"
                     name="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                    className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent text-base"
                     placeholder="Your email"
                     required
                   />
@@ -89,13 +97,14 @@ const Contact = () => {
                     prefix="Email"
                     field="email"
                     errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2"
                   >
                     Message
                   </label>
@@ -103,7 +112,7 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                    className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent text-base"
                     placeholder="Your message"
                     required
                   ></textarea>
@@ -111,47 +120,51 @@ const Contact = () => {
                     prefix="Message"
                     field="message"
                     errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition disabled:opacity-50"
+                  className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition disabled:opacity-50 text-base font-medium"
                 >
                   {state.submitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
 
+            {/* Contact Information Section */}
             <div
-              className="bg-green-600 p-8 md:p-12 text-white"
+              className="bg-green-600 p-4 sm:p-8 md:p-12 text-white"
               data-aos="fade-left"
             >
-              <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">
+                Contact Information
+              </h3>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 mt-1" />
+                  <Phone className="h-6 w-6 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
-                    <p>+233 55-159-1730 </p>
+                    <p className="break-words">+233 55-159-1730</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="h-6 w-6 mt-1" />
+                  <Mail className="h-6 w-6 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <p>popfoodsghana@gmail.com</p>
+                    <p className="break-words">popfoodsghana@gmail.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 mt-1" />
+                  <MapPin className="h-6 w-6 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold mb-1">Location</h4>
-                    <p>
+                    <p className="break-words">
                       123 Processing Plant Street
                       <br />
                       Agona Kwanyako
@@ -160,8 +173,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-12">
-                <h4 className="font-semibold mb-4">Business Hours</h4>
+              <div className="mt-8 sm:mt-12">
+                <h4 className="font-semibold mb-3 sm:mb-4">Business Hours</h4>
                 <p className="mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 4:00 PM</p>
               </div>
@@ -170,13 +183,14 @@ const Contact = () => {
         </div>
       </div>
 
+      {/* Success Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white text-black p-8 rounded-lg max-w-md w-full mx-4">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 px-4">
+          <div className="bg-white text-black p-6 sm:p-8 rounded-lg max-w-md w-full mx-auto">
             <div className="text-center">
               <div className="text-green-600 mb-4">
                 <svg
-                  className="w-16 h-16 mx-auto"
+                  className="w-12 sm:w-16 h-12 sm:h-16 mx-auto"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -189,19 +203,19 @@ const Contact = () => {
                   ></path>
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold mb-4 text-green-600">
+              <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-green-600">
                 Message Sent Successfully!
               </h2>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-3 sm:mb-4">
                 Thank you for reaching out to Pop Food Ghana Ltd. We&apos;ve
                 received your message and will get back to you shortly.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-5 sm:mb-6">
                 Please check your email for our confirmation message.
               </p>
               <button
                 onClick={handleModalClose}
-                className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+                className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition text-base font-medium"
               >
                 Close
               </button>

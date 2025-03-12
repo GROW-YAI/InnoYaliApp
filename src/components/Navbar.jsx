@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full font-Montserrat bg-white/80 backdrop-blur-md z-50 shadow-sm">
+    <nav className="fixed w-full font-Montserrat bg-white/60 hover:text-green-600 hover:bg-black backdrop-blur-lg z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div
@@ -23,7 +23,7 @@ const Navbar = () => {
             onClick={scrollToTop}
           >
             <img src={Images.Logo} alt="Pop Food Ghana Ltd" className="w-8 h-8" />
-            <span className="ml-2 text-xl font-bold text-gray-900">
+            <span className="ml-2 text-xl font-bold hover:text-green-600 text-gray-900">
             Pop Food Ghana Ltd
             </span>
           </div>
