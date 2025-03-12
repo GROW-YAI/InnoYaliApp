@@ -150,13 +150,13 @@ const Footer = () => {
                 <input
                   type="hidden"
                   name="_subject"
-                  value="New Newsletter Subscription - Pop Food Ghana"
+                  value="Newsletter Subscription - Pop Food Ghana"
                 />
-                <input type="hidden" name="_format" value="plain" />
+                <input type="hidden" name="_template" value="table" />
                 <input
                   type="hidden"
-                  name="_next"
-                  value={window.location.href}
+                  name="_autoresponse"
+                  value="Welcome to Pop Food Ghana's Newsletter! Thank you for subscribing. You'll receive our latest updates about products and special offers."
                 />
                 <input
                   type="email"

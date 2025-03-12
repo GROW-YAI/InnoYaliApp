@@ -1,8 +1,20 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
+import { useState, useEffect } from "react";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xkgjnypn");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setIsModalOpen(true);
+    }
+  }, [state.succeeded]);
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -12,44 +24,6 @@ const Contact = () => {
       console.error("Form submission error:", error);
     }
   };
-
-  if (state.succeeded) {
-    return (
-      <section id="contact" className="py-20 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8">
-            <div className="text-center">
-              <div className="text-green-600 mb-4">
-                <svg
-                  className="w-16 h-16 mx-auto"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  ></path>
-                </svg>
-              </div>
-              <h2 className="text-2xl font-bold text-green-600">
-                Message Sent Successfully!
-              </h2>
-              <p className="text-gray-600 mt-4">
-                Thank you for reaching out to Pop Food Ghana Ltd. We&apos;ve
-                received your message and will get back to you shortly.
-              </p>
-              <p className="text-gray-600 mt-2">
-                Please check your email for our confirmation message.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="contact" className="py-20 bg-green-50">
@@ -66,13 +40,13 @@ const Contact = () => {
                 <input
                   type="hidden"
                   name="_subject"
-                  value="New Contact Form Submission - Pop Food Ghana"
+                  value="Contact Form - Pop Food Ghana"
                 />
-                <input type="hidden" name="_format" value="plain" />
+                <input type="hidden" name="_template" value="table" />
                 <input
                   type="hidden"
-                  name="_next"
-                  value={window.location.href}
+                  name="_autoresponse"
+                  value="Thank you for contacting Pop Food Ghana! We have received your message and will get back to you soon."
                 />
                 <div>
                   <label
@@ -195,6 +169,46 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white text-black p-8 rounded-lg max-w-md w-full mx-4">
+            <div className="text-center">
+              <div className="text-green-600 mb-4">
+                <svg
+                  className="w-16 h-16 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold mb-4 text-green-600">
+                Message Sent Successfully!
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Thank you for reaching out to Pop Food Ghana Ltd. We&apos;ve
+                received your message and will get back to you shortly.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Please check your email for our confirmation message.
+              </p>
+              <button
+                onClick={handleModalClose}
+                className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -60,25 +60,27 @@ const Products = () => {
         <h2 className="text-3xl font-bold text-center mb-12" data-aos="fade-up">
           Our Products
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
                   className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <div className="flex justify-between items-center">
+                <p className="text-gray-600 mb-4 flex-grow">
+                  {product.description}
+                </p>
+                <div className="flex flex-col space-y-3">
                   <span className="text-2xl font-bold text-green-600">
                     GH₵{product.price}
                   </span>
@@ -86,7 +88,7 @@ const Products = () => {
                     href={product.paystackLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
+                    className="flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition w-full"
                     aria-label={`Buy ${product.name} for GH₵${product.price}`}
                   >
                     <ShoppingCart className="h-5 w-5 mr-2" aria-hidden="true" />
