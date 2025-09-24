@@ -13,7 +13,7 @@ const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [state, handleSubmit] = useForm("xqapknvd");
 
-  // Update the modal state when form submission succeeds
+  
   React.useEffect(() => {
     if (state.succeeded) {
       setIsModalOpen(true);
