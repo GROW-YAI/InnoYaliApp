@@ -144,33 +144,52 @@ const Contact = () => {
               </h3>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Phone</h4>
-                    <p className="break-words">+233 55-159-1730</p>
-                  </div>
-                </div>
+            <a href="tel:+233551591730" className="flex items-start space-x-4">
+    <Phone className="h-6 w-6 mt-1 flex-shrink-0 text-blue-500 hover:text-blue-700" />
+    <div>
+      <h4 className="font-semibold mb-1">Phone</h4>
+      <p className="break-words text-gray-700">+233 55-159-1730</p>
+    </div>
+  </a>
 
-                <div className="flex items-start space-x-4">
-                  <Mail className="h-6 w-6 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="break-words">popfoodsghana@gmail.com</p>
-                  </div>
-                </div>
 
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Location</h4>
-                    <p className="break-words">
-                      123 Processing Plant Street
-                      <br />
-                      Agona Kwanyako
-                    </p>
-                  </div>
-                </div>
+ <div className="flex items-start space-x-4">
+  {/* Clickable icon */}
+  <a href="mailto:popfoodsghana@gmail.com">
+    <Mail className="h-6 w-6 mt-1 flex-shrink-0 text-blue-500 hover:text-blue-700" />
+  </a>
+
+  {/* Clickable email text */}
+  <div>
+    <h4 className="font-semibold mb-1">Email</h4>
+    <a
+      href="mailto:popfoodsghana@gmail.com"
+      className="break-words text-gray-700 hover:underline"
+    >
+      popfoodsghana@gmail.com
+    </a>
+  </div>
+</div>
+
+
+               <div className="flex items-start space-x-4">
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=123+Processing+Plant+Street,+Agona+Kwanyako"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <MapPin className="h-6 w-6 mt-1 flex-shrink-0 text-blue-500 hover:text-blue-700" />
+  </a>
+  <div>
+    <h4 className="font-semibold mb-1">Location</h4>
+    <p className="break-words text-gray-700">
+      123 Processing Plant Street
+      <br />
+      Agona Kwanyako
+    </p>
+  </div>
+</div>
+
               </div>
 
               <div className="mt-8 sm:mt-12">
