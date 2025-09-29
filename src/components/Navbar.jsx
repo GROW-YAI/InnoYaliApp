@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Images from "../constant/images";
 
 const Navbar = () => {
@@ -15,20 +15,26 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full font-Montserrat bg-white/60 hover:text-green-600 hover:bg-black backdrop-blur-lg z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed w-full font-Montserrat bg-white/60 backdrop-blur-lg z-50 shadow-sm overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="flex justify-between h-16 items-center">
+          {/* Logo + Brand */}
           <div
-            className="flex items-center cursor-pointer"
+            className="flex items-center cursor-pointer flex-shrink-0"
             onClick={scrollToTop}
           >
-            <img src={Images.Logo} alt="Pop Food Ghana Ltd" className="w-8 h-8" />
-            <span className="ml-2 text-xl font-bold hover:text-green-600 text-gray-900">
-            Pop Food Ghana Ltd
+            <img
+              src={Images.Logo}
+              alt="Pop Food Ghana Ltd"
+              className="w-8 h-8"
+            />
+            <span className="ml-2 text-lg font-bold hover:text-green-600 text-gray-900 truncate">
+              Pop Food Ghana Ltd
             </span>
           </div>
 
-          <div className="hidden md:flex space-x-8">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-6">
             <button
               onClick={scrollToTop}
               className="text-gray-600 hover:text-green-600 transition"
@@ -67,6 +73,7 @@ const Navbar = () => {
             </a>
           </div>
 
+          {/* Mobile Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden"
@@ -76,9 +83,10 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
+        <div className="md:hidden w-full">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white w-full">
             <button
               onClick={() => {
                 scrollToTop();
