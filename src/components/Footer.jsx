@@ -31,7 +31,7 @@ const Footer = () => {
               <p className="text-gray-400 text-lg">Follow us on social media</p>
               <div className="flex space-x-6 justify-center md:justify-start">
                 <a
-                  href="https://www.facebook.com/pop_foods_ghana"
+                  href="https://www.facebook.com/profile.php?id=61573693316084"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-110"
