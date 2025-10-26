@@ -25,13 +25,13 @@ const HeroSlider = () => {
       image: Images.Image3,
       title: "Processing & Drying",
       description:
-        "Using our advanced technology, the okra is processed and dried to preserve its nutritional value.",
+        "Using our advanced technology, the okro is processed and dried to preserve its nutritional value.",
     },
     {
       image: Images.Image4,
       title: "Powder Production",
       description:
-        "The dried okra is carefully ground into fine powder, perfect for various culinary applications.",
+        "The dried okro is carefully ground into fine powder, perfect for various culinary applications.",
     },
     {
       image: Images.Image6,
@@ -39,6 +39,12 @@ const HeroSlider = () => {
       description:
         "Final products are packaged in moisture-proof containers to ensure long-lasting freshness.",
     },
+    {
+  image: Images.Image8,
+  title: "Ready for Cooking",
+  description:
+    "Our okro products bring convenience and authentic Ghanaian taste right to your kitchen.",
+},
   ];
 
   const slideVariants = {

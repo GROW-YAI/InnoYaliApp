@@ -6,7 +6,7 @@ const Innovator = () => {
     {
       icon: <Award className="w-6 h-6 text-green-500" />,
       title: "Patent Holder",
-      description: "Unique okra preservation process",
+      description: "Unique okro preservation process",
     },
     {
       icon: <BookOpen className="w-6 h-6 text-green-500" />,
@@ -36,9 +36,6 @@ const Innovator = () => {
             Leadership & Innovation
           </span>
           <h2 className="text-3xl font-bold mt-2 mb-4">Meet Our Innovator</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Pioneering sustainable food preservation technology
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -72,9 +69,9 @@ const Innovator = () => {
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 With over 1+ years of experience in food technology, Prince has
-                revolutionized traditional okra preservation methods. His
+                revolutionized traditional okro preservation methods. His
                 innovative approach combines modern technology with sustainable
-                practices to create high-quality, long-lasting okra products.
+                practices to create high-quality, long-lasting okro products.
               </p>
             </div>
 
