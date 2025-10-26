@@ -17,38 +17,40 @@ const Process = () => {
         "Carefully selecting mature, peak-fresh okra followed by thorough cleaning and precise slicing for optimal processing.",
       icon: <LeafyGreen className="w-6 h-6 text-green-500" />,
       details: [
-        "Quality inspection of fresh okra",
+        "Quality inspection of fresh okro",
         "Thorough washing process",
         "Precise slicing for even drying",
       ],
       image: Images.Image1,
     },
-    {
-      number: "02",
-      title: "Advanced Drying",
-      description:
-        "Using innovative drying techniques that preserve nutritional value while ensuring even dehydration.",
-      icon: <Droplets className="w-6 h-6 text-green-500" />,
-      details: [
-        "Temperature-controlled environment",
-        "Consistent moisture reduction",
-        "Nutritional value preservation",
-      ],
-      image: Images.Image7,
-    },
-    {
-      number: "03",
-      title: "Precision Processing",
-      description:
-        "Converting dried okra into fine powder using specialized grinding and sifting techniques.",
-      icon: <Scale className="w-6 h-6 text-green-500" />,
-      details: [
-        "Fine grinding process",
-        "Uniform particle size",
-        "Quality sifting",
-      ],
-      image: Images.Image4,
-    },
+{
+  number: "02",
+  title: "Drying",
+  description:
+    "Fresh okro is sliced and gently dehydrated to retain its natural nutrients, vibrant color, and long-lasting freshness.",
+  icon: <Droplets className="w-6 h-6 text-green-500" />,
+  details: [
+    "Hygienic dehydration process",
+    "Even drying for quality consistency",
+    "Preserves nutrients and flavor",
+  ],
+  image: Images.Image7,
+},
+
+{
+  number: "03",
+  title: "Blending into Powder",
+  description:
+    "The dried okro is hygienically milled into a smooth powder, ensuring easy use in soups and stews.",
+  icon: <Scale className="w-6 h-6 text-green-500" />,
+  details: [
+    "Clean milling process",
+    "Fine and smooth consistency",
+    "Perfect for traditional dishes",
+  ],
+  image: Images.Image4,
+},
+
     {
       number: "04",
       title: "Eco-Friendly Packaging",
@@ -70,7 +72,6 @@ const Process = () => {
       icon: <Store className="w-6 h-6 text-green-500" />,
       details: [
         "Online platforms",
-        "Export channels",
         "Local market distribution",
       ],
       image: Images.Image2,

@@ -41,12 +41,7 @@ const Navbar = () => {
             >
               Home
             </button>
-            <a
-              href="#features"
-              className="text-gray-600 hover:text-green-600 transition"
-            >
-              Features
-            </a>
+           
             <a
               href="#products"
               className="text-gray-600 hover:text-green-600 transition"
@@ -96,13 +91,6 @@ const Navbar = () => {
             >
               Home
             </button>
-            <a
-              href="#features"
-              className="block px-3 py-2 text-gray-600 hover:text-green-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Features
-            </a>
             <a
               href="#products"
               className="block px-3 py-2 text-gray-600 hover:text-green-600"
