@@ -1,4 +1,14 @@
 node_modules
 .env
+.env.local
+.env.production
+.env*.local
 package-lock.json
 .early.coverage
+.next/
+dist/
+build/
+widget-test.html
+ToDo.md
+pnpm-lock.yaml
+pnpm-lock.yaml.*
