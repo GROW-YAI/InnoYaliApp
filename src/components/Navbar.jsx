@@ -15,12 +15,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full font-Montserrat bg-white/60 backdrop-blur-lg z-50 shadow-sm overflow-x-hidden">
+    <nav className="fixed top-0 left-0 right-0 w-full font-Montserrat bg-white/60 backdrop-blur-lg z-50 shadow-sm overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo + Brand */}
           <div
-            className="flex items-center cursor-pointer flex-shrink-0"
+            className="flex items-center cursor-pointer shrink-0"
             onClick={scrollToTop}
           >
             <img
