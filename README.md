@@ -1,5 +1,4 @@
-# InnoYaliApp - Accessible Education Platform
-
+# PopFoods Ghana
 ## Project Overview
 InnoYaliApp is an innovative educational platform designed to make learning accessible to all users. The website provides a modern, user-friendly interface for accessing educational content and resources. The platform is built with React and Vite, ensuring fast performance and a smooth user experience.
 
